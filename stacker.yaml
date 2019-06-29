@@ -1,0 +1,11 @@
+namespace: ''
+stacks:
+  - name: dlpx-git-to-amazon-s3
+    template_path: templates/git2s3.yaml
+    variables:
+      OutputBucketName: dlxp-git-to-amazon-s3
+      ApiSecret: ${envvar GITAWS_API_SECRET}
+      GitToken: ${envvar GITAWS_ACCESS_TOKEN}
+      QSS3BucketName: dlpx-aws-quickstart
+      SubnetIds: subnet-04e199375c6f666b9, subnet-0fe25c115e7a24e0a
+      SecurityGroupIds: sg-0da539f48cf9fc6af
