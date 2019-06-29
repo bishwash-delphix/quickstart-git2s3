@@ -27,7 +27,7 @@ cleanup = False
 key = 'enc_key'
 
 logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 logger.handlers[0].setFormatter(logging.Formatter('[%(asctime)s][%(levelname)s] %(message)s'))
 logging.getLogger('boto3').setLevel(logging.ERROR)
 logging.getLogger('botocore').setLevel(logging.ERROR)
@@ -94,9 +94,14 @@ def pull_repo(repo, branch_name, remote_url, creds):
     return repo
 
 
-def zip_repo(repo_path, repo_name):
+def zip_repo(repo_path, repo_name, branch_name):
     logger.info('Creating zipfile...')
-    zf = ZipFile('/tmp/'+repo_name.replace('/', '_')+'.zip', 'w')
+
+    zipfile_path = '/tmp/%s' % (
+            repo_name.replace('/', '_')
+            + '_' + branch_name.replace('/', '_')+'.zip')
+
+    zf = ZipFile(zipfile_path, 'w')
     for dirname, subdirs, files in os.walk(repo_path):
         if exclude_git:
             try:
@@ -108,11 +113,11 @@ def zip_repo(repo_path, repo_name):
         for filename in files:
             zf.write(os.path.join(dirname, filename), os.path.join(zdirname, filename))
     zf.close()
-    return '/tmp/'+repo_name.replace('/', '_')+'.zip'
+    return zipfile_path
 
 
-def push_s3(filename, repo_name, outputbucket):
-    s3key = '%s/%s' % (repo_name, filename.replace('/tmp/', ''))
+def push_s3(filename, repo_name, branch_name, outputbucket):
+    s3key = '%s/%s' % (repo_name, "%s.zip" % branch_name.replace('/', '_'))
     logger.info('pushing zip to s3://%s/%s' % (outputbucket, s3key))
     data = open(filename, 'rb')
     s3.put_object(Bucket=outputbucket, Body=data, Key=s3key)
@@ -120,6 +125,7 @@ def push_s3(filename, repo_name, outputbucket):
 
 
 def lambda_handler(event, context):
+    logger.debug(event)
     keybucket = event['context']['key-bucket']
     outputbucket = event['context']['output-bucket']
     pubkey = event['context']['public-key']
@@ -180,6 +186,7 @@ def lambda_handler(event, context):
         logger.error('Source IP %s is not allowed' % event['context']['source-ip'])
         raise Exception('Source IP %s is not allowed' % event['context']['source-ip'])
 
+    logger.debug("full_name: %s" % full_name)
     # GitHub publish event
     if('action' in event['body-json'] and event['body-json']['action'] == 'published'):
         branch_name = 'tags/%s' % event['body-json']['release']['tag_name']
@@ -224,9 +231,15 @@ def lambda_handler(event, context):
     except Exception:
         logger.info('creating new repo for %s in %s' % (remote_url, repo_path))
         repo = create_repo(repo_path, remote_url, creds)
+
+    logger.debug("repo: %s, branch_name: %s, remote_url: %s" %
+                 (repo, branch_name, remote_url))
+
     pull_repo(repo, branch_name, remote_url, creds)
-    zipfile = zip_repo(repo_path, repo_name)
-    push_s3(zipfile, repo_name, outputbucket)
+
+    logger.debug("repo_path: %s, repo_name: %s" % (repo_path, repo_name))
+    zipfile = zip_repo(repo_path, repo_name, branch_name)
+    push_s3(zipfile, repo_name, branch_name, outputbucket)
     if cleanup:
         logger.info('Cleanup Lambda container...')
         shutil.rmtree(repo_path)

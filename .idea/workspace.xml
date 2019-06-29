@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c226838e-586b-45fd-89b5-99859a96c8dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/packages/GitPullS3/lambda.zip" beforeDir="false" afterPath="$PROJECT_DIR$/functions/packages/GitPullS3/lambda.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/source/GitPullS3/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/source/GitPullS3/lambda_function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stacker.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/stacker.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/git2s3.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/git2s3.yaml" afterDir="false" />
     </list>
@@ -13,14 +14,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.18260188">
+    <splitter split-orientation="horizontal" split-proportion="0.26802507">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/stacker.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+                <state relative-caret-position="240">
+                  <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -29,7 +30,7 @@
             <entry file="file://$PROJECT_DIR$/functions/source/CreateSSHKey/lambda_function.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="389">
-                  <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+                  <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -41,8 +42,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/git2s3.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="247">
-                  <caret line="114" column="13" lean-forward="true" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+                <state relative-caret-position="364">
+                  <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/functions/source/GitPullS3/lambda_function.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="111">
+                  <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="62" />
                 </state>
               </provider>
             </entry>
@@ -71,8 +81,16 @@
       <find>QSS3BucketName</find>
       <find>QSS3Bucket</find>
       <find>::Function</find>
-      <find>AllowedIps</find>
       <find>ssh</find>
+      <find>ec2:</find>
+      <find>ref</find>
+      <find>AllowedIps</find>
+      <find>allowed-ips</find>
+      <find>ipranges</find>
+      <find>.zip</find>
+      <find>logger</find>
+      <find>ExcludeGit</find>
+      <find>creating new</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/templates</dir>
@@ -84,8 +102,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/stacker.yaml" />
+        <option value="$PROJECT_DIR$/functions/source/GitPullS3/lambda_function.py" />
         <option value="$PROJECT_DIR$/templates/git2s3.yaml" />
+        <option value="$PROJECT_DIR$/stacker.yaml" />
       </list>
     </option>
   </component>
@@ -117,6 +136,37 @@
             <path>
               <item name="quickstart-git2s3" type="b2602c69:ProjectViewProjectNode" />
               <item name="quickstart-git2s3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quickstart-git2s3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quickstart-git2s3" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quickstart-git2s3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quickstart-git2s3" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quickstart-git2s3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quickstart-git2s3" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="GitPullS3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quickstart-git2s3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quickstart-git2s3" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quickstart-git2s3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quickstart-git2s3" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="GitPullS3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="quickstart-git2s3" type="b2602c69:ProjectViewProjectNode" />
@@ -158,12 +208,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561831639908</updated>
-      <workItem from="1561831641160" duration="5913000" />
+      <workItem from="1561831641160" duration="9777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5913000" />
+    <option name="totallyTimeSpent" value="9777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2138" y="23" width="1702" height="1057" extended-state="0" />
@@ -177,7 +227,7 @@
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.45699483" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.30569947" />
       <window_info anchor="bottom" id="Python Console" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
@@ -216,21 +266,28 @@
     <entry file="file://$PROJECT_DIR$/functions/source/CreateSSHKey/lambda_function.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/source/GitPullS3/lambda_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stacker.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="240">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/git2s3.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="114" column="13" lean-forward="true" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+        <state relative-caret-position="364">
+          <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
         </state>
       </provider>
     </entry>

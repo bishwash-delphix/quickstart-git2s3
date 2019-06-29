@@ -9,3 +9,5 @@ stacks:
       QSS3BucketName: dlpx-aws-quickstart
       SubnetIds: subnet-04e199375c6f666b9, subnet-0fe25c115e7a24e0a
       SecurityGroupIds: sg-0da539f48cf9fc6af
+      AllowedIps: 4.15.123.66
+      ExcludeGit: False

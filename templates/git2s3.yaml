@@ -110,6 +110,12 @@ Parameters:
   SubnetIds:
     Type: List<AWS::EC2::Subnet::Id>
     Description: Subnet Id for lambda in VPC
+  ExcludeGit:
+    Type: String
+    Description: If true the function will not include .git folder in the zip
+    Default: False
+    AllowedValues: [True, False]
+
 Conditions:
   UseAllowedIps: !Not
     - !Equals
@@ -480,7 +486,7 @@ Resources:
       Timeout: '300'
       Environment:
         Variables:
-          ExcludeGit: 'True'
+          ExcludeGit: !Ref ExcludeGit
       Code:
         S3Bucket: !Ref 'LambdaZipsBucket'
         S3Key: !Sub '${QSS3KeyPrefix}functions/packages/GitPullS3/lambda.zip'
